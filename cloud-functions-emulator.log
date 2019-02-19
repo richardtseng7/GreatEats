@@ -1,0 +1,103 @@
+2018-04-12T02:57:33.360Z - error: SUPERVISOR error Error: listen EADDRINUSE 127.0.0.1:5001
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:97:10)
+2018-04-12T02:57:33.368Z - error: supervisorPort (5001) is already in use
+2018-04-12T03:16:02.177Z - error: SUPERVISOR error Error: listen EADDRINUSE 127.0.0.1:5001
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:97:10)
+2018-04-12T03:16:02.186Z - error: supervisorPort (5001) is already in use
+2018-04-12T03:47:34.742Z - error: SUPERVISOR error Error: listen EADDRINUSE 127.0.0.1:5001
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:97:10)
+2018-04-12T03:47:34.746Z - error: supervisorPort (5001) is already in use
+2018-04-12T03:49:53.096Z - error: SUPERVISOR error Error: listen EADDRINUSE 127.0.0.1:5001
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:97:10)
+2018-04-12T03:49:53.100Z - error: supervisorPort (5001) is already in use
+2018-04-12T04:01:24.686Z - error: SUPERVISOR error Error: listen EADDRINUSE 127.0.0.1:5001
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:97:10)
+2018-04-12T04:01:24.689Z - error: supervisorPort (5001) is already in use
+2018-04-12T04:04:07.771Z - error: SUPERVISOR error Error: listen EADDRINUSE 127.0.0.1:5001
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:97:10)
+2018-04-12T04:04:07.774Z - error: supervisorPort (5001) is already in use
+2018-04-12T04:09:57.453Z - error: SUPERVISOR error Error: listen EADDRINUSE 127.0.0.1:5001
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:97:10)
+2018-04-12T04:09:57.457Z - error: supervisorPort (5001) is already in use
+2018-04-12T04:15:17.691Z - error: SUPERVISOR error Error: listen EADDRINUSE 127.0.0.1:5001
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:97:10)
+2018-04-12T04:15:17.693Z - error: supervisorPort (5001) is already in use
+
+RangeError: "port" argument must be >= 0 and < 65536
+    at Server.listen (net.js:1467:13)
+    at Function.listen (/usr/local/lib/node_modules/firebase-tools/node_modules/express/lib/application.js:618:24)
+    at Supervisor.start (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/supervisor/supervisor.js:626:29)
+    at Emulator.start (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/emulator/emulator.js:59:8)
+    at Object.main (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/emulator/main.js:122:12)
+    at Object.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/bin/emulator:32:20)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)2018-04-12T04:18:57.334Z - error: uncaughtException: "port" argument must be >= 0 and < 65536 date=Thu Apr 12 2018 00:18:57 GMT-0400 (EDT), pid=1703, uid=501, gid=20, cwd=/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator, execPath=/usr/local/bin/node, version=v8.9.4, argv=[/usr/local/bin/node, /usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator, --bindHost=localhost, --host=localhost, --timeout=20000, --verbose=false, --useMocks=false, --logFile=/Users/richardtseng/Documents/Brackets/cloud-functions-emulator.log, --restPort=90001, --supervisorPort=90000, --tail=true, --maxIdle=540000, --idlePruneInterval=60000, --watch=true, --watchIgnore=node_modules], rss=105406464, heapTotal=75259904, heapUsed=55374096, external=1657533, loadavg=[2.7880859375, 2.923828125, 3.607421875], uptime=5281
+RangeError: "port" argument must be >= 0 and < 65536
+    at Server.listen (net.js:1467:13)
+    at Function.listen (/usr/local/lib/node_modules/firebase-tools/node_modules/express/lib/application.js:618:24)
+    at Supervisor.start (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/supervisor/supervisor.js:626:29)
+    at Emulator.start (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/emulator/emulator.js:59:8)
+    at Object.main (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/emulator/main.js:122:12)
+    at Object.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/bin/emulator:32:20)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+2018-04-12T04:26:09.941Z - error: SUPERVISOR error Error: listen EADDRINUSE 127.0.0.1:5001
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:97:10)
+2018-04-12T04:26:09.943Z - error: supervisorPort (5001) is already in use
+2018-04-12T04:47:54.355Z - error: SUPERVISOR error Error: listen EADDRINUSE 127.0.0.1:5001
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:97:10)
+2018-04-12T04:47:54.359Z - error: supervisorPort (5001) is already in use

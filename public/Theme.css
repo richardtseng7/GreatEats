@@ -1,0 +1,77 @@
+:root {
+    --primary-color: #EB461B;
+    --faded-primary: #F4DED8;
+    --text-color: #262626;
+    --gray-text: #999999;
+    --gray-background: #FAFAFA;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+}
+
+.centered {
+  position: fixed;
+  left: 50%;
+  margin-left: -100px;
+} 
+
+.search-box {
+    width: 185px;
+    border: 1px solid var(--gray-text);
+    padding: 4px;
+    height: 20px;
+    border-radius: 3px;
+    background-color: var(--gray-background);
+    color: var(--text-color);
+    font-size: 12px;
+    text-align: center
+}
+
+.header {
+    background-color: var(--faded-primary);
+}
+
+/*
+#locationField, #restaurantName {
+    float: middle;
+    width: 185px;
+    border: 1px solid var(--gray-text);
+    padding: 3px;
+    height: 20px;
+    border-radius: 3px;
+    background-color: white;
+    color: var(--text-color);
+    font-size: 14px;
+    padding-left: 8px;
+}
+*/
+
+.button {
+    background-color: var(--primary-color); /* red orange app color */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    float: right;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+body{
+    background-color: var(--gray-background);
+}
+
+#fields {
+    background-color: var(--faded-primary); 
+}
+
+#drop-area{
+    background-color: var(--gray-background);
+}

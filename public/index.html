@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Explore</title>
+    <link rel="stylesheet" href="Explore.css">
+    <link rel="stylesheet" href="PopUp.css">
+    <link rel="stylesheet" href="single image.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+  <body onload="loadPage()">
+    <div class="container">
+          <!-- Header -->
+          <div class="header">
+              <img id="logo" alt="logo" src="/resources/logo.svg" />
+              <div class="search-container">
+                  <input id="searchQuery" type="text" placeholder="Search">
+                  <button id="searchBtn" type="submit" onclick="searchDatabase()"><i class="fa fa-search"></i></button>
+              </div>
+          </div>
+          <!-- Image grid -->
+          <h2 id="displayLocation">Near </h2>
+          <div id="grid" class="row">
+            <div id ="column1" class="column">
+                <img id="content" src="/resources/sashimi.jpg" />
+                <img id="content" src="/resources/koreanbbq.jpg" />
+                <img id="content" src="/resources/beefnoodlesoup.jpg" />
+            </div>
+            <div id="column2" class="column">
+                <img id="content" src="/resources/scallionpancake.jpg"/>
+                <img id="content" src="/resources/eggsbenedict.jpg" />
+                <img id="content" src="/resources/oysterpancake.jpg" />
+            </div> 
+            <div id="column3" class="column">
+                <img id="content" src="/resources/lobsterpizza.jpg" />
+                <img id="content" src="/resources/beefroll.jpg" /> 
+                <img id="content" src="/resources/roastedduck.jpg" />
+            </div>          
+        </div>
+        <!-- Overlay  -->
+        <div id="myNav" class="overlay">
+          <!-- Button to close the overlay navigation -->
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <!-- Next and previous buttons -->
+          <a class="prev">&#10094;</a>
+          <a class="next">&#10095;</a>  
+          <!-- Overlay content -->
+          <div class="overlay-content"> 
+              <div class="PopUpContainer">
+                  <div class="col">
+                     <img id="PopUpImage" src=""/>
+                  </div>
+                  <div id="descriptionText" class="col">
+                    <p>Description</p>
+                  </div>
+                </div>
+          </div>
+        </div>  
+    </div>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+        <script src="FirebaseAPI.js"></script>
+         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnszbCMKfoGXnGi4J3I26XoQGsslE05aI&libraries=places&callback=initialize"
+         async defer></script>
+        <script src="GoogleMapsAPI.js"></script>
+        <script src="Lightbox.js"></script>
+  </body>
+</html>

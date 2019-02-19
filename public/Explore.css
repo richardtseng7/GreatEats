@@ -1,0 +1,165 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #FAFAFA;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #FAFAFA;
+    padding-bottom: 20px;
+    margin-right: 150px;
+    margin-left: 150px;
+}
+
+#displayLocation {
+    color: #262626;
+    font-size: 28px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-left: 172px;
+}
+
+.column {
+    flex: 30%;
+    flex-direction: column;
+    background-color: #FAFAFA;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#column1 {
+    padding-right: 0px;
+}
+
+#column2 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#column3 {
+    padding-left: 0px;
+}
+
+.column img {
+    margin-top; 8px;
+    vertical-align: middle;
+    height: 330px;
+    width: 335px;
+    object-fit: cover;
+    padding: 10px;
+}
+
+.column img:hover {
+    filter: brightness(0.5);
+}
+
+.header #logo {
+    margin-left: 20px;
+    width: 13%;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+.header .search-container {
+  float: right;
+}
+
+.header img {
+  float: left;
+  position
+  padding: 5px;
+  padding-right: 30px;
+  padding-left: 56px;
+}
+
+/* Style the search box inside the navigation bar */
+.header input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.header .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.header .search-container button:hover {
+  background: #ccc;
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .header .search-container {
+    float: none;
+  }
+  .header a, .header input[type=text], .header .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .header input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
+*:focus {
+    outline: none;
+}
+
+
+.search-container {
+    width: 185px;
+    border: 1px solid var(--gray-text);
+    padding: 4px;
+    height: 20px;
+    border-radius: 3px;
+    background-color: var(--gray-background);
+    color: var(--text-color);
+    font-size: 12px;
+    text-align: center
+
+}
+
+
+.input-box {
+    float:middle;
+    width: 185px;
+    border: 1px solid var(--gray-text);
+    padding: 3px;
+    height: 20px;
+    border-radius: 3px;
+    background-color: var(--gray-background);
+    color: var(--text-color);
+    font-size: 14px;
+    padding-left: 8px;
+}
+
+.button {
+    background-color: var(--primary-color); /* red orange app color */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    float: right;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+}

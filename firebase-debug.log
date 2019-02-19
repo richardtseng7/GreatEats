@@ -1,0 +1,77 @@
+[debug] [2018-04-12T04:47:45.657Z] ----------------------------------------------------------------------
+[debug] [2018-04-12T04:47:45.663Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-04-12T04:47:45.666Z] CLI Version:   3.18.2
+[debug] [2018-04-12T04:47:45.666Z] Platform:      darwin
+[debug] [2018-04-12T04:47:45.667Z] Node Version:  v8.9.4
+[debug] [2018-04-12T04:47:45.667Z] Time:          Thu Apr 12 2018 00:47:45 GMT-0400 (EDT)
+[debug] [2018-04-12T04:47:45.667Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-12T04:47:45.757Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-12T04:47:45.758Z] > authorizing via signed-in user
+[debug] [2018-04-12T04:47:45.763Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-12T04:47:45.763Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/CigOKPc1C3dsNEpoLUo5Pi_fqCBx-l07BiaHg9K0eGY',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Apr 12 2018 00:47:45 GMT-0400 (EDT)
+[debug] [2018-04-12T04:47:46.672Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-12T04:47:46.697Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/good-eats-project  
+  
+ Thu Apr 12 2018 00:47:46 GMT-0400 (EDT)
+[debug] [2018-04-12T04:47:47.765Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-12T04:47:47.766Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/good-eats-project/tokens  
+  
+ Thu Apr 12 2018 00:47:47 GMT-0400 (EDT)
+[debug] [2018-04-12T04:47:48.300Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-12T04:47:48.302Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/good-eats-project  
+  
+ Thu Apr 12 2018 00:47:48 GMT-0400 (EDT)
+[debug] [2018-04-12T04:47:48.688Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/richardtseng/Documents/Brackets'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-04-12T04:47:50.124Z] Fetching environment
+[debug] [2018-04-12T04:47:50.128Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/180389004605:getServerAppConfig  
+  
+ Thu Apr 12 2018 00:47:50 GMT-0400 (EDT)
+[debug] [2018-04-12T04:47:50.129Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/180389004605/clients/_:getWebAppConfig  
+  
+ Thu Apr 12 2018 00:47:50 GMT-0400 (EDT)
+[debug] [2018-04-12T04:47:50.634Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2018-04-12T04:47:50.756Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-12T04:47:50.757Z] Starting @google-cloud/functions-emulator
+[debug] [2018-04-12T04:47:54.873Z] Parsing function triggers
+[warn] ⚠  functions: Failed to load functions source code. Ensure that you have the latest SDK by running npm i --save firebase-functions inside the functions directory.
+[debug] [2018-04-12T04:47:55.471Z] Error during trigger parsing:  Error occurred while parsing your function triggers.
+
+ReferenceError: firebase is not defined
+    at Object.<anonymous> (/Users/richardtseng/Documents/Brackets/functions/index.js:9:28)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+    at Module.require (module.js:587:17)
+    at require (internal/module.js:11:18)
+    at /usr/local/lib/node_modules/firebase-tools/lib/triggerParser.js:18:11
+    at Object.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/triggerParser.js:38:3)
+[warn] ⚠  functions: Error from emulator. Error occurred while parsing your function triggers.
+
+ReferenceError: firebase is not defined
+    at Object.<anonymous> (/Users/richardtseng/Documents/Brackets/functions/index.js:9:28)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+    at Module.require (module.js:587:17)
+    at require (internal/module.js:11:18)
+    at /usr/local/lib/node_modules/firebase-tools/lib/triggerParser.js:18:11
+    at Object.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/triggerParser.js:38:3)
+[debug] [2018-04-12T04:47:55.472Z] 

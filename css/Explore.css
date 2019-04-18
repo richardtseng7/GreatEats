@@ -55,7 +55,8 @@
 }
 
 .header #logo-img {
-    height: 70px;
+    height: 50px;
+    padding: 5px;
 }
 
 .header .search-container {
@@ -67,7 +68,7 @@
 
 .header #search-bar {
     width: 225px;
-    height: 30px;
+    height: 25px;
     border-radius: 3px;
     padding: 5px 10px;
     outline: 0;
@@ -79,6 +80,7 @@ input[type="search"]::placeholder{
 
 input[type="search"]:focus::placeholder {
     text-align: left;
+    opacity: 0;
 }
 
 .header .user {

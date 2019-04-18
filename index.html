@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Linh Bui</title>
+        <title>Explore</title>
         <!-- Import my CSS stylesheets -->
-        <link rel="stylesheet" href="Theme.css">
-        <link rel="stylesheet" href="Explore.css">
-        <link rel="stylesheet" href="PopUp.css">
-        <link rel="stylesheet" href="Upload.css">
-        <link rel="stylesheet" href="User.css">
+        <link rel="stylesheet" href="/css/Theme.css">
+        <link rel="stylesheet" href="/css/Explore.css">
+        <link rel="stylesheet" href="/css/PopUp.css">
+        <link rel="stylesheet" href="/css/Upload.css">
 
         <!-- Import fonts -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -57,13 +56,12 @@
                     </div>
                 </div>    
             </div>
-
             <!-- Share post card -->
             <div class="post-card">
                 <div id="fields" >    
                     <form class="allInputs">     
                         <!-- Location input -->
-                        <input id="locationField" class="centered" type="text" placeholder="What city had great food?" onclick="expand()">
+                        <input id="locationField" class="centered" type="text" placeholder="What city had great food?">
 
                         <!-- Restaurant name input -->
                         <input id="restaurantField" type="text" placeholder="Name of restaurant">
@@ -74,7 +72,7 @@
                             <!-- Drag & Drop -->
                             <div id="drop-area">
                                 <div class="drop-area-desc">
-                                    <p>Choose an image or drag it here.</p>
+                                    <p>Choose an image or drag it here</p>
                                 </div>
                                 <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
                                 <div id="gallery"></div>
@@ -85,30 +83,12 @@
                     </form>
                 </div>
             </div>
-
-            <!-- User profile card -->
-            <div class="user-card">
-                <div class="userInfo"> 
-                    <img src="/resources/linh.jpeg" id="profpic">
-                    <p id="name">Linh Bui</p>
-                    <p id="bio">food enthusiast from RVA</p>
+            <!-- Image grid -->
+            <div class="grid-card">
+                <div id="location-header">
+                    <i class="fa fa-map-marker" id="location-icon"></i>
+                    <div id="user-location"></div>
                 </div>
-            </div>
-
-            <!-- 'Posts' and 'Places' segmented control button -->
-            <div class="segmented-control">
-                <div class="segmented-btn">
-                    <input type="radio" name="radios" id="posts" checked>
-                    <label class="seg-label" for="posts">Posts</label>
-                </div>
-                <div class="segmented-btn">
-                    <input type="radio" name="radios" id="places">
-                    <label class="seg-label" for="places">Places</label>
-                </div>
-            </div>
-
-            <!-- Grid card -->
-            <div class="user-grid-card">
                 <!-- Image grid -->
                 <div id="grid">
                     <img class="preview" id="content" src="/resources/sashimi.jpg" />
@@ -122,17 +102,6 @@
                     <img class="preview" id="content" src="/resources/roastedduck.jpg" />
                 </div>
             </div>
-
-            <!-- Places card -->
-            <div class="places-card">
-                <!-- Places grid -->
-                <div id="grid">
-                    <img id="places" src="/resources/Durham.jpeg" />
-                    <img id="places" src="/resources/Richmond.jpeg" />
-                    <img id="places" src="/resources/Vancouver.jpeg" />
-                </div>
-            </div>
-            
             <!-- Overlay -->
             <div id="myNav" class="overlay">
                 <!-- Button to close the overlay navigation -->
@@ -161,17 +130,17 @@
             </div> 
         </div>
         <!-- Import my javascript files -->
-        <script src="DragAndDrop.js"></script>
-        <script src="HideShow.js"></script>
-        <script src="GoogleMapsAPI.js"></script>
-        <script src="Lightbox.js"></script>
+        <script src="/script/DragAndDrop.js"></script>
+        <script src="/script/FirebaseAPI.js"></script>
+        <script src="/script/HideShow.js"></script>
+        <script src="/script/GoogleMapsAPI.js"></script>
+        <script src="/script/Lightbox.js"></script>
 
         <!-- Import feather script -->
         <script> feather.replace() </script>
 
         <!-- Import firebase scripts -->
         <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-        <script src="FirebaseAPI.js"></script>
 
         <!-- Import GoogleMaps script -->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnszbCMKfoGXnGi4J3I26XoQGsslE05aI&libraries=places&callback=initialize"

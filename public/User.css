@@ -11,6 +11,7 @@
     height: 150px;
     object-fit: cover;
     padding-bottom: 10px;
+    transform: rotate(90deg);
 }
 
 #name{

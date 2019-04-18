@@ -1,21 +1,10 @@
-:root {
-    --primary-color: #EB461B;
-    --faded-primary: #F4DED8;
-    --text-color: #262626;
-    --gray-text: #999999;
-    --gray-textarea: #F4F7F9;
-    --gray-background: #FAFAFA;
-        
-    --theme-primary: #344955;
-    --theme-primary-light: #4A6572;
-    --theme-secondary: #F9AA33;
-    --theme-gray: #E1E1E1;    
+/* Theme for both color and spacing (for now?) */
 
-    --linh-pink: #ab6e8a;
-    --linh-green: #71a58f;
-    --linh-blue: #88b8c2;
-    --linh-coral: #e36d56;
-    --linh-navy: #344047;
+:root {
+    --dark-navy: #344955;
+    --light-navy: #4A6572;
+    --yellow: #F9AA33;
+    --gray: #FAFAFA;
 }
 
 /* Feather icon styling. Used in header. */
@@ -74,8 +63,8 @@ button {
 /* Button styling. */
 
 #postButton, #savebtn {
-    background-color: var(--theme-secondary);
-    color: var(--theme-primary-light);
+    background-color: var(--yellow);
+    color: var(--light-navy);
     border-radius: 4px;
     padding: 10px 24px;
     text-align: center;
@@ -85,7 +74,7 @@ button {
 /* --- Header styling. --- */
 
 .header {
-    background-color: var(--theme-primary);
+    background-color: var(--dark-navy);
 }
 
 /* Search bar in the middle of header. Refer to Explore.css. */
@@ -107,39 +96,53 @@ button {
 
 .settings-menu a:hover{
     color: white;
-    background-color: var(--theme-secondary);
+    background-color: var(--yellow);
 }
 
 /* --- User card styling. --- */
 
 .user-card {
-    background-color: var(--gray-background);
+    background-color: var(--gray);
+}
+
+#name{
+    font-size: 32px;
+    line-height: 60px;
+}
+
+#bio{
+    font-size: 12px;
+    padding-bottom: 30px;
 }
 
 input[type=radio]:checked + label{
-    border-color: var(--theme-primary);
+    border-color: var(--dark-navy);
+}
+
+.segmented-control, .user-grid-card, .places-card {
+    background-color: var(--gray);
 }
 
 /* --- 'Share post' card styling. --- */
 
 .post-card {
-    background-color: var(--theme-primary-light);
+    background-color: var(--light-navy);
 }
 
 #drop-area{
-    background-color: var(--gray-background);
+    background-color: var(--gray);
 }
 
 /* --- Grid card styling. --- */
 
 .grid-card {
-    background-color: var(--theme-gray);
+    background-color: var(--gray);
 }
 
 /* Location header on top of grid. Refer to Explore.css. */
 #location-header{
     /*    font-family: 'Source Sans Pro', sans-serif;*/
-    color: var(--theme-primary-light);
+    color: var(--light-navy);
 }
 
 #location-icon{

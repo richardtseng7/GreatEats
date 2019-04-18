@@ -78,7 +78,6 @@ On hover, the button to remove an image from a post will flip colours (black bac
     border-style: none none solid none;
     height: 100px;
     resize: none;
-    border-bottom-color: #F4DED8;
 }
 
 #fields{

@@ -53,6 +53,7 @@ input, label, textarea, button {
 button {
     background-color: transparent;
     cursor: pointer;
+    border: 0;
     outline: 0;
 }
 

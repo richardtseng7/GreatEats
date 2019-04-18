@@ -1,52 +1,95 @@
 .allInputs > * {
     border: 2px #ccc;
     border-radius: 4px;
-    width: 40%;
-    display: flex;
-    margin: auto;   
+    display: flex;  
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
-
-p {
-  margin-top: 0;
-}
-
-#gallery {
-  margin-top: 10px;
+.post-card {
+    display: none;
 }
 
 #gallery img {
-  width: 150px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  vertical-align: middle;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
 }
 
-#gallery img:hover {
-  background: black;
-  color: black;
+#drop-area{
+    height: 150px;
+    position: relative;
 }
 
-.button:hover {
-  background: #ddd;
+.drop-area-desc{
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    text-align: center;
+}
+
+#drop-area.highlight {
+  border-color: purple;
 }
 
 #fileElem {
-   height: 100px;
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    opacity: 0;
 }
 
 #div-image {
     position: relative;
-    display:inline-block;
+    padding: 30px;
 }
 
 #div-image #button-close {
     position: absolute;
-    top: 5px;
-    right: 15px;
+    left: 105px;
+    
     background-color: white;
-    border-radius: 25px;
+    color: black;
+    border-radius: 50%;
+
     width: 25px;
     height: 25px;
-    opacity: 1;
+    opacity: 0.9;
+
+    font-size: 15px;
+    text-align: center;
+}
+
+/*
+On hover, the button to remove an image from a post will flip colours (black background with a white X) to let users know that the button has been highlighted.
+*/
+#div-image #button-close:hover {
+    background-color: black;
+    color: white;
+}
+
+#locationField, #restaurantField, #descriptionField {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+}
+
+#descriptionField{
+    border-style: none none solid none;
+    height: 100px;
+    resize: none;
+    border-bottom-color: #F4DED8;
+}
+
+#fields{
+    padding: 8px 30%;
+}
+
+#mainField {
+    display:flex;
+    flex-direction: column;
+}
+
+#postButton{
+    margin-left: auto;
 }

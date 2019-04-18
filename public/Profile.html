@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Explore</title>
+        <title>Linh Bui</title>
         <!-- Import my CSS stylesheets -->
         <link rel="stylesheet" href="Theme.css">
         <link rel="stylesheet" href="Explore.css">
         <link rel="stylesheet" href="PopUp.css">
         <link rel="stylesheet" href="Upload.css">
+        <link rel="stylesheet" href="User.css">
 
         <!-- Import fonts -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -56,6 +57,7 @@
                     </div>
                 </div>    
             </div>
+
             <!-- Share post card -->
             <div class="post-card">
                 <div id="fields" >    
@@ -83,12 +85,30 @@
                     </form>
                 </div>
             </div>
-            <!-- Image grid -->
-            <div class="grid-card">
-                <div id="location-header">
-                    <i class="fa fa-map-marker" id="location-icon"></i>
-                    <div id="user-location"></div>
+
+            <!-- User profile card -->
+            <div class="user-card">
+                <div class="userInfo"> 
+                    <img src="/resources/UserIcon.png" id="profpic">
+                    <p id="name">Linh Bui</p>
+                    <p id="bio">food enthusiast from RVA</p>
                 </div>
+            </div>
+
+            <!-- 'Posts' and 'Places' segmented control button -->
+            <div class="segmented-control">
+                <div class="segmented-btn">
+                    <input type="radio" name="radios" id="posts" checked>
+                    <label class="seg-label" for="posts">Posts</label>
+                </div>
+                <div class="segmented-btn">
+                    <input type="radio" name="radios" id="places">
+                    <label class="seg-label" for="places">Places</label>
+                </div>
+            </div>
+
+            <!-- Grid card -->
+            <div class="user-grid-card">
                 <!-- Image grid -->
                 <div id="grid">
                     <img class="preview" id="content" src="/resources/sashimi.jpg" />
@@ -102,6 +122,17 @@
                     <img class="preview" id="content" src="/resources/roastedduck.jpg" />
                 </div>
             </div>
+
+            <!-- Places card -->
+            <div class="places-card">
+                <!-- Places grid -->
+                <div id="grid">
+                    <img id="places" src="/resources/Durham.jpeg" />
+                    <img id="places" src="/resources/Richmond.jpeg" />
+                    <img id="places" src="/resources/Vancouver.jpeg" />
+                </div>
+            </div>
+            
             <!-- Overlay -->
             <div id="myNav" class="overlay">
                 <!-- Button to close the overlay navigation -->

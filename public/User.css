@@ -1,0 +1,57 @@
+.userInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+}
+
+#profpic{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    padding-bottom: 10px;
+}
+
+#name{
+    font-size: 32px;
+    line-height: 60px;
+}
+
+#bio{
+    font-size: 12px;
+    padding-bottom: 30px;
+}
+
+.selectTab{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.seg-label{
+    flex-grow: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.segmented-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+}
+
+.segmented-btn {
+    margin-right: 20px;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+input[type=radio]:checked + label{
+    display: block;
+    border: none;
+    border-top: 3px solid;
+}

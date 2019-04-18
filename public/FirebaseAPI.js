@@ -1,12 +1,12 @@
 /*eslint-env browser*/
 var config = {
-            apiKey: "AIzaSyCV6KAUerSJ_5N1x4Do4GwWg4aufLuxHWk",
-            authDomain: "good-eats-project.firebaseapp.com",
-            databaseURL: "https://good-eats-project.firebaseio.com",
-            projectId: "good-eats-project",
-            storageBucket: "good-eats-project.appspot.com", 
-            messagingSenderId: "180389004605"
-          };
+    apiKey: "AIzaSyCV6KAUerSJ_5N1x4Do4GwWg4aufLuxHWk",
+    authDomain: "good-eats-project.firebaseapp.com",
+    databaseURL: "https://good-eats-project.firebaseio.com",
+    projectId: "good-eats-project",
+    storageBucket: "good-eats-project.appspot.com", 
+    messagingSenderId: "180389004605"
+};
 firebase.initializeApp(config);
 
 
@@ -44,18 +44,18 @@ function addToDatabase() {
 }
 
 function createTimestamp() {
-  var now = new Date();
-  var date = [now.getMonth() + 1, now.getDate(), now.getFullYear()];
-  var time = [now.getHours(), now.getMinutes(), now.getSeconds()];
-  var suffix = (time[0] < 12) ? "AM" : "PM";
-  time[0] = (time[0] < 12) ? time[0]: time[0] - 12;
-  time[0] = time[0] || 12;
-  for (var i = 1; i < 3; i++) {
-    if (time[i] < 10) {
-      time[i] = "0" + time[i];
+    var now = new Date();
+    var date = [now.getMonth() + 1, now.getDate(), now.getFullYear()];
+    var time = [now.getHours(), now.getMinutes(), now.getSeconds()];
+    var suffix = (time[0] < 12) ? "AM" : "PM";
+    time[0] = (time[0] < 12) ? time[0]: time[0] - 12;
+    time[0] = time[0] || 12;
+    for (var i = 1; i < 3; i++) {
+        if (time[i] < 10) {
+            time[i] = "0" + time[i];
+        }
     }
-  }
-  return date.join("-") + " " + time.join(":") + " " + suffix;
+    return date.join("-") + " " + time.join(":") + " " + suffix;
 }
 
 function retrieveFromDatabase(key) {
@@ -72,10 +72,10 @@ function retrieveFromDatabase(key) {
                     img.src = url;
                     img.setAttribute("id", "content");
                     img.onclick = function(event){
-                       openNav(description);
-                       var PopUpImage = document.getElementById("PopUpImage");
-                       PopUpImage.src = img.src;
-                   };
+                        openNav(description);
+                        var PopUpImage = document.getElementById("PopUpImage");
+                        PopUpImage.src = img.src;
+                    };
                     var grid = document.getElementById(columnDiv[i]);
                     grid.appendChild(img);
                     if (i == 2) i = 0;
@@ -92,7 +92,7 @@ function searchDatabase() {
     var searchText = document.getElementById("searchQuery");
     var query = searchText.value.split(/^\s+|\s+$/).join('').toLowerCase();
     if (query){
- locationRef.orderByChild('lowercase').startAt(query).endAt(query + "\uf8ff").once('value', function(snapshot){
+        locationRef.orderByChild('lowercase').startAt(query).endAt(query + "\uf8ff").once('value', function(snapshot){
             snapshot.forEach(function(childSnapshot) {
                 var childKey = childSnapshot.key;
                 window.location.href = 'index.html?search=' + childKey;
@@ -101,9 +101,41 @@ function searchDatabase() {
     }
 }
 
+function showPassword() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+
+function signIn() {
+    var email = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
+        // Sign-in successful. Show user explore page
+        window.location.href = "index.html";
+    }).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        alert(errorMessage);
+        window.location.reload();
+    });
+}
+
+function signOut(){
+    firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+        window.location.href = "Login.html";
+    }).catch(function(error) {
+        // An error happened.
+    });
+}
+
 function uploadImageToDatabase(file){
-  var fileRef = storageRef.child(file.name);
-  fileRef.put(file);
+    var fileRef = storageRef.child(file.name);
+    fileRef.put(file);
 }
 
 function format(str){

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="Theme.css">
+        <link rel="stylesheet" href="Explore.css">
+        <link rel="stylesheet" href="PopUp.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <form class="auth">
+                <input id="username" type="text" placeholder="Username or email">
+                <input id="password" type="password" placeholder="Password">
+                <p><input type="checkbox" onclick="showPassword()">Show Password</p>
+            </form>
+            <button id="loginButton" type="submit" onclick="signIn()">Login</button>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+        <script src="FirebaseAPI.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnszbCMKfoGXnGi4J3I26XoQGsslE05aI&libraries=places&callback=initialize"
+                async defer></script>
+        <script src="GoogleMapsAPI.js"></script>
+        <script src="Lightbox.js"></script>
+    </body>
+</html>

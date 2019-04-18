@@ -3,75 +3,168 @@
     --faded-primary: #F4DED8;
     --text-color: #262626;
     --gray-text: #999999;
+    --gray-textarea: #F4F7F9;
     --gray-background: #FAFAFA;
+        
+    --theme-primary: #344955;
+    --theme-primary-light: #4A6572;
+    --theme-secondary: #F9AA33;
+    --theme-gray: #E1E1E1;    
+
+    --linh-pink: #ab6e8a;
+    --linh-green: #71a58f;
+    --linh-blue: #88b8c2;
+    --linh-coral: #e36d56;
+    --linh-navy: #344047;
 }
 
-body{
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 14px;
+/* Feather icon styling. Used in header. */
+.feather-16 {
+    color: white;
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
 }
 
-.centered {
-  position: fixed;
-  left: 50%;
-  margin-left: -100px;
-} 
-
-.search-box {
-    width: 185px;
-    border: 1px solid var(--gray-text);
-    padding: 4px;
-    height: 20px;
-    border-radius: 3px;
-    background-color: var(--gray-background);
-    color: var(--text-color);
-    font-size: 12px;
-    text-align: center
+.feather-24 {
+    color: white;
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
 }
+
+.feather-32 {
+    color: white;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+}
+
+/* --- General styling guide used throughout. --- */
+
+body, p {
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10pt;
+}
+
+a {
+    color: black;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10pt;
+    text-decoration: none;
+}
+
+input, label, textarea, button {
+    font-family: 'Montserrat', sans-serif;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+    outline: 0;
+}
+
+::placeholder{
+    font-size: 10pt;
+}
+
+/* Button styling. */
+
+#postButton, #savebtn {
+    background-color: var(--theme-secondary);
+    color: var(--theme-primary-light);
+    border-radius: 4px;
+    padding: 10px 24px;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* --- Header styling. --- */
 
 .header {
-    background-color: var(--faded-primary);
+    background-color: var(--theme-primary);
 }
 
-/*
-#locationField, #restaurantName {
-    float: middle;
-    width: 185px;
-    border: 1px solid var(--gray-text);
-    padding: 3px;
-    height: 20px;
-    border-radius: 3px;
-    background-color: white;
-    color: var(--text-color);
-    font-size: 14px;
-    padding-left: 8px;
-}
-*/
-
-.button {
-    background-color: var(--primary-color); /* red orange app color */
-    border: none;
-    border-radius: 5px;
-    color: white;
-    float: right;
-    padding: 10px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-weight: 400;
-    font-size: 14px;
+/* Search bar in the middle of header. Refer to Explore.css. */
+.header #search-bar {
+    background-color: white;
+    border: 1px solid #ddd;
+    font-family: 'FontAwesome', 'Source Sans Pro', sans-serif;
+    font-size: 10pt;
 }
 
-body{
+#search-bar:focus {
+    background-color: #fff;
+}
+
+/* User drop down menu on right side of header. Refer to Explore.css. */
+.settings-menu {
+    background-color: white;
+}
+
+.settings-menu a:hover{
+    color: white;
+    background-color: var(--theme-secondary);
+}
+
+/* --- User card styling. --- */
+
+.user-card {
     background-color: var(--gray-background);
 }
 
-#fields {
-    background-color: var(--faded-primary); 
+input[type=radio]:checked + label{
+    border-color: var(--theme-primary);
+}
+
+/* --- 'Share post' card styling. --- */
+
+.post-card {
+    background-color: var(--theme-primary-light);
 }
 
 #drop-area{
     background-color: var(--gray-background);
+}
+
+/* --- Grid card styling. --- */
+
+.grid-card {
+    background-color: var(--theme-gray);
+}
+
+/* Location header on top of grid. Refer to Explore.css. */
+#location-header{
+    /*    font-family: 'Source Sans Pro', sans-serif;*/
+    color: var(--theme-primary-light);
+}
+
+#location-icon{
+    font-size: 28pt;
+}
+
+#user-location{
+    font-size: 16pt;
+}
+
+/* --- Overlay styling. Refer to PopUp.css. --- */
+
+.description-header {
+    background-color: white;
+}
+
+.description-container {
+    background-color: white;
+}
+
+#restaurant-name{
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+#restaurant-location{
+    font-size: 11pt;
 }

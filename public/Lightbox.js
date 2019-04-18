@@ -39,6 +39,7 @@ function addKeyboardNav(event) {
 // Display overlay including clicked image and its respective description.
 // TODO: Retrieve description from database based on image src.
 function changeImage(imageNumber){
+
     document.getElementById("myNav").style.display = "flex";
     var PopUpImage = document.getElementById("pop-up-img");
     PopUpImage.src = images[imageNumber].src;

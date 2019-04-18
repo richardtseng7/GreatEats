@@ -106,13 +106,13 @@ button {
 }
 
 #name{
-    font-size: 32px;
+    font-size: 22px;
     line-height: 60px;
 }
 
 #bio{
     font-size: 12px;
-    padding-bottom: 30px;
+    padding-bottom: 28px;
 }
 
 input[type=radio]:checked + label{

@@ -14,16 +14,6 @@
     transform: rotate(90deg);
 }
 
-#name{
-    font-size: 32px;
-    line-height: 60px;
-}
-
-#bio{
-    font-size: 12px;
-    padding-bottom: 30px;
-}
-
 .selectTab{
     display: flex;
     flex-direction: row;

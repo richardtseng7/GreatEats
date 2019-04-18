@@ -64,7 +64,7 @@ button {
 
 #postButton, #savebtn {
     background-color: var(--yellow);
-    color: var(--light-navy);
+    color: white;
     border-radius: 4px;
     padding: 10px 24px;
     text-align: center;
@@ -156,7 +156,8 @@ input[type=radio]:checked + label{
 /* --- Overlay styling. Refer to PopUp.css. --- */
 
 .description-header {
-    background-color: white;
+    color: white;
+    background-color: var(--light-navy);
 }
 
 .description-container {

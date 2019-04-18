@@ -1,15 +1,46 @@
-.allInputs > * {
-    border: 2px #ccc;
-    border-radius: 4px;
-    display: flex;  
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-
 .post-card {
     display: none;
 }
 
+.allInputs > * {
+    display: flex;
+    border: 2px #ccc;
+    border-radius: 4px; 
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+#mainField > * {
+    border: 2px #ccc;
+    border-radius: 4px; 
+}
+
+#mainField {
+    display: flex;
+    flex-direction: column;
+}
+
+#locationField, #restaurantField, #descriptionField {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+}
+
+#descriptionField{
+    border-style: none none solid none;
+    height: 100px;
+    resize: none;
+}
+
+#fields{
+    padding: 8px 30%;
+}
+
+#postButton{
+    margin-left: auto;
+}
+
+/* Uploaded image preview styling */
 #gallery img {
     height: 100px;
     width: 100px;
@@ -66,29 +97,4 @@ On hover, the button to remove an image from a post will flip colours (black bac
 #div-image #button-close:hover {
     background-color: black;
     color: white;
-}
-
-#locationField, #restaurantField, #descriptionField {
-    width: 100%;
-    padding: 12px 20px;
-    box-sizing: border-box;
-}
-
-#descriptionField{
-    border-style: none none solid none;
-    height: 100px;
-    resize: none;
-}
-
-#fields{
-    padding: 8px 30%;
-}
-
-#mainField {
-    display:flex;
-    flex-direction: column;
-}
-
-#postButton{
-    margin-left: auto;
 }

@@ -10,7 +10,7 @@ document.addEventListener('click', function(event){
 
 function show(String){
     var ele = document.getElementsByClassName(String)[0];
-    if (ele.style.display == "none") ele.style.display = "block";
+    if (ele.style.display == "none" || ele.style.display == "") ele.style.display = "block";
     else ele.style.display = "none";
 }
 

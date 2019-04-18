@@ -30,7 +30,7 @@
 #location-header {
     /* TODO: Figure out better way to align location text ("Near Durham, NC") with left column of grid. */
     width: 100%;
-    padding: 2% 0% 2% calc(100vw - 955px);
+    padding: 2% 0% 2% calc(100vw - 950px);
 }
 
 #location-icon {

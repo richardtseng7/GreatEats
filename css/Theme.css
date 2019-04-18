@@ -135,6 +135,10 @@ input[type=radio]:checked + label{
     background-color: var(--gray);
 }
 
+.drop-area-desc{
+    color: #757575;
+}
+
 /* --- Grid card styling. --- */
 
 .grid-card {

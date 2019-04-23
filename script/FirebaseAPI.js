@@ -120,7 +120,6 @@ function signInWithGoogle(){
         }
         // The signed-in user info.
         var user = result.user;
-        console.log(user);
         window.location.href = "index.html";
     }).catch(function(error) {
         // Handle Errors here.
@@ -167,7 +166,7 @@ function signIn() {
 function signOut(){
     firebase.auth().signOut().then(function() {
         // Sign-out successful.
-        window.location.href = "index.html";
+        window.location.href = "login.html";
     }).catch(function(error) {
         // An error happened.
     });

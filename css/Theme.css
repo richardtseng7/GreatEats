@@ -5,6 +5,7 @@
     --light-navy: #4A6572;
     --yellow: #F9AA33;
     --gray: #FAFAFA;
+    --blue-gray: #8297A1;
 }
 
 /* Feather icon styling. Used in header. */
@@ -70,7 +71,7 @@ button {
     border-radius: 4px;
     padding: 10px 24px;
     text-align: center;
-    font-size: 12px;
+    font-size: 10pt;
 }
 
 /* --- Header styling. --- */
@@ -110,8 +111,13 @@ button {
     background-color: var(--dark-navy);
 }
 
-#login-seg-label, #show-password, .sign-in-google, .register-google {
+#login-seg-label {
     color: white;
+}
+
+#show-password, .sign-in-google, .register-google {
+    color: var(--blue-gray);
+    font-size: 9pt;
 }
 
 /* --- User card styling. --- */

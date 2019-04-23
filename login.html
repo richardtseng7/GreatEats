@@ -2,26 +2,79 @@
 <html>
     <head>
         <title>Login</title>
-        <link rel="stylesheet" href="Theme.css">
-        <link rel="stylesheet" href="Explore.css">
-        <link rel="stylesheet" href="PopUp.css">
+        <!-- Import my CSS stylesheets -->
+        <link rel="stylesheet" href="css/Theme.css">
+        <link rel="stylesheet" href="css/Explore.css">
+        <link rel="stylesheet" href="css/PopUp.css">
+        <link rel="stylesheet" href="css/Upload.css">
+        <link rel="stylesheet" href="css/User.css">
+
+        <!-- Import fonts -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet'>
+
+        <!-- Import font awesome icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!--  Import feather icons -->
+        <script src="https://unpkg.com/feather-icons"></script>
     </head>
     <body>
-        <div class="container">
-            <form class="auth">
-                <input id="username" type="text" placeholder="Username or email">
-                <input id="password" type="password" placeholder="Password">
-                <p><input type="checkbox" onclick="showPassword()">Show Password</p>
-            </form>
-            <button id="loginButton" type="submit" onclick="signIn()">Login</button>
+        <div class="login-card">
+             <div class="login-logo">
+                <img id="login-logo-icon" src="resources/logo-icon.png"/>
+                <img id="login-logo-text" src="resources/logo-text.png"/>
+            </div>
+            
+            <!-- 'Sign in' and 'Register' segmented control button -->
+            <div class="login-segmented-control">
+                <div class="segmented-btn">
+                    <input type="radio" name="radios" id="sign-in" checked>
+                    <label class="seg-label" id="login-seg-label" for="sign-in">Sign in</label>
+                </div>
+                <div class="segmented-btn">
+                    <input type="radio" name="radios" id="register">
+                    <label class="seg-label" id="login-seg-label" for="register">Register</label>
+                </div>
+            </div>
+
+            <div class="sign-in-card">
+                <form class="sign-in-form">
+                    <input id="login-email" type="text" placeholder="Email">
+                    <input id="login-password" type="password" placeholder="Password">
+                    <p id="show-password"><input type="checkbox" onclick="showPassword()">Show password</p>
+                     <button id="sign-in-btn" type="submit" onclick="signIn()">Login</button>
+                    <a class="sign-in-google" href="javascript: signInWithGoogle();">Sign in with Google</a>
+                </form>
+             </div>
+            
+            <div class="register-card">
+                <form class="register-form">
+                    <input id="register-email" type="text" placeholder="Email">
+                    <input id="register-password" type="password" placeholder="Password">
+                    <button id="register-btn" type="submit" onclick="register()">Register</button>
+                     <a class="register-google" href="javascript: signInWithGoogle();">Register with Google</a>
+                </form>
+            </div>
+
+ 
+           
         </div>
-        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-        <script src="FirebaseAPI.js"></script>
+        <!-- Import firebase scripts -->
+        <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+        
+        <!-- Import my javascript files -->
+        <script src="script/DragAndDrop.js"></script>
+        <script src="script/FirebaseAPI.js"></script>
+        <script src="script/HideShow.js"></script>
+        <script src="script/GoogleMapsAPI.js"></script>
+        <script src="script/Lightbox.js"></script>
+
+        <!-- Import feather script -->
+        <script> feather.replace() </script>
+
+        <!-- Import GoogleMaps script -->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnszbCMKfoGXnGi4J3I26XoQGsslE05aI&libraries=places&callback=initialize"
                 async defer></script>
-        <script src="GoogleMapsAPI.js"></script>
-        <script src="Lightbox.js"></script>
     </body>
 </html>

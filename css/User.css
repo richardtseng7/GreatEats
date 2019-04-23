@@ -1,3 +1,57 @@
+.login-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.login-logo {
+    display: flex;
+    flex-direction: column;
+    margin: 10% 0% 50px 0%;
+}
+
+#login-logo-icon, #login-logo-text {
+    align-self: center;
+}
+
+#login-logo-icon {
+    height: 50px;
+    margin-bottom: 2%;
+}
+
+#login-logo-text {
+    height: 25px;
+}
+
+.login-segmented-control {
+    margin-bottom: 50px;
+}
+
+.sign-in-card, .sign-in-form, .register-card, .register-form{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.sign-in-form > *, .register-form > * {
+    margin-bottom: 20px;
+}
+
+#login-email, #login-password, #register-email, #register-password {
+    padding: 7px;
+    width: 200px;
+}
+
+#show-password, #register-password{
+    margin-bottom: 40px;
+}
+
+.register-card {
+    display: none;
+}
+
 .userInfo{
     display: flex;
     flex-direction: column;
@@ -14,19 +68,13 @@
     transform: rotate(90deg);
 }
 
-.selectTab{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
 .seg-label{
     flex-grow: 1;
     padding: 10px;
     text-align: center;
 }
 
-.segmented-control {
+.login-segmented-control, .user-segmented-control {
     display: flex;
     justify-content: center;
     align-items: center;

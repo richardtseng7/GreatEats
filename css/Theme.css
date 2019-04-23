@@ -64,7 +64,7 @@ button {
 
 /* Button styling. */
 
-#postButton, #savebtn {
+#postButton, #savebtn, #sign-in-btn, #register-btn {
     background-color: var(--yellow);
     color: white;
     border-radius: 4px;
@@ -101,6 +101,19 @@ button {
     background-color: var(--yellow);
 }
 
+/* --- Login card styling. --- */
+.login-card {
+    background-color: var(--dark-navy);
+}
+
+.login-segmented-control {
+    background-color: var(--dark-navy);
+}
+
+#login-seg-label, #show-password, .sign-in-google, .register-google {
+    color: white;
+}
+
 /* --- User card styling. --- */
 
 .user-card {
@@ -121,7 +134,7 @@ input[type=radio]:checked + label{
     border-color: var(--dark-navy);
 }
 
-.segmented-control, .user-grid-card, .places-card {
+.user-segmented-control, .user-grid-card, .places-card {
     background-color: var(--gray);
 }
 

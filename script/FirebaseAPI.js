@@ -93,7 +93,8 @@ function retrieveFromDatabase(key) {
                                 shortcut.child("/description").once('value', function(snapshot) {
                                     var review = snapshot.val();
                                     var arr = [restaurant, location, review];
-                                    changeImage(img.getAttribute("index"), arr);
+                                    cacheDescription(arr);
+                                    changeImage(img.getAttribute("index"));
                                 });
                             });
                         });

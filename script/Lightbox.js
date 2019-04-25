@@ -8,11 +8,11 @@ window.onload = function() {
     for(var i = 0; i < images.length; i++){
         var image = images[i];
         image.setAttribute("index", i);
+        
+        var arr = ["Restaurant name", "Location", "A great review awaits!"];
+        cacheDescription(arr);
         image.onclick = function(){
-            var arr = ["Restaurant name", "Location", "A great review awaits!"];
-            cacheDescription(arr);
-            
-            changeImage(this.getAttribute("index"), arr);
+            changeImage(this.getAttribute("index"));
         };
     }
 };
@@ -45,13 +45,14 @@ function addKeyboardNav(event) {
 }
 
 // Display overlay including clicked image and its respective description.
-function changeImage(imageNumber, desc){
+function changeImage(imageNumber){
     document.getElementById("myNav").style.display = "flex";
     var PopUpImage = document.getElementById("pop-up-img");
     PopUpImage.src = images[imageNumber].src;
-    document.getElementById("restaurant-name").innerHTML = desc[0];
-    document.getElementById("restaurant-location").innerHTML = desc[1];
-    document.getElementById("description-text").innerHTML = desc[2];
+
+    document.getElementById("restaurant-name").innerHTML = descList[imageNumber][0];
+    document.getElementById("restaurant-location").innerHTML = descList[imageNumber][1];
+    document.getElementById("description-text").innerHTML = descList[imageNumber][2];
     // Allow user to navigate using keyboard.
     enableKeyboardShortcuts();
     // Prevent scrolling while in overlay.

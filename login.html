@@ -21,11 +21,11 @@
     </head>
     <body>
         <div class="login-card">
-             <div class="login-logo">
+            <div class="login-logo">
                 <img id="login-logo-icon" src="resources/logo-icon.png"/>
                 <img id="login-logo-text" src="resources/logo-text.png"/>
             </div>
-            
+
             <!-- 'Sign in' and 'Register' segmented control button -->
             <div class="login-segmented-control">
                 <div class="segmented-btn">
@@ -46,8 +46,8 @@
                 </form>
                 <button id="sign-in-btn" type="submit" onclick="signIn()">Login</button>
                 <a class="sign-in-google" href="javascript: signInWithGoogle();">Sign in with Google</a>
-             </div>
-            
+            </div>
+
             <div class="register-card">
                 <form class="register-form">
                     <input id="register-email" type="text" placeholder="Email">
@@ -56,11 +56,11 @@
                 <button id="register-btn" type="submit" onclick="register()">Register</button>
                 <a class="register-google" href="javascript: signInWithGoogle();">Register with Google</a>
             </div>
-            
+
         </div>
         <!-- Import firebase scripts -->
         <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
-        
+
         <!-- Import my javascript files -->
         <script src="script/DragAndDrop.js"></script>
         <script src="script/FirebaseAPI.js"></script>

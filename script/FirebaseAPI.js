@@ -82,26 +82,31 @@ function retrieveFromDatabase(key) {
                 img.setAttribute("id", "content");
                 var images = document.getElementsByClassName("preview");
                 img.setAttribute("index", images.length);
-                img.onclick = function(event){
-                    ref.child("/Photo/" + photoKey).once('value').then( function(snapshot) {
-                        var post = snapshot.val();
-                        var shortcut =  ref.child("/Post/" + post);
-                        shortcut.child("/restaurant").once('value', function(snapshot) {
-                            var restaurant = snapshot.val();
-                            shortcut.child("/userID").once('value', function(snapshot) {
-                                var location = snapshot.val();
-                                shortcut.child("/description").once('value', function(snapshot) {
-                                    var review = snapshot.val();
-                                    var arr = [restaurant, location, review];
-                                    cacheDescription(arr);
-                                    changeImage(img.getAttribute("index"));
-                                });
-                            });
-                        });
-                    });
-                };
+                getDesc(photoKey).then(function(data) {
+                    img.onclick = function(){
+                        changeImage(img.getAttribute("index"));
+                    };
+                });
                 var grid = document.getElementById("grid");
                 grid.appendChild(img);
+            });
+        });
+    });
+}
+
+function getDesc(photoKey){
+    return ref.child("/Photo/" + photoKey).once('value').then(function(snapshot) {
+        var post = snapshot.val();
+        var shortcut =  ref.child("/Post/" + post);
+        shortcut.child("/restaurant").once('value', function(snapshot) {
+            var restaurant = snapshot.val();
+            shortcut.child("/userID").once('value', function(snapshot) {
+                var location = snapshot.val();
+                shortcut.child("/description").once('value', function(snapshot) {
+                    var review = snapshot.val();
+                    var arr = [restaurant, location, review];
+                    cacheDescription(arr);
+                });
             });
         });
     });

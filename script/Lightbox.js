@@ -18,6 +18,7 @@ window.onload = function() {
 };
 
 function cacheDescription(desc){
+//    console.log("Add " + desc + " to cache.");
     descList.push(desc);
 }
 
@@ -49,7 +50,7 @@ function changeImage(imageNumber){
     document.getElementById("myNav").style.display = "flex";
     var PopUpImage = document.getElementById("pop-up-img");
     PopUpImage.src = images[imageNumber].src;
-
+    
     document.getElementById("restaurant-name").innerHTML = descList[imageNumber][0];
     document.getElementById("restaurant-location").innerHTML = descList[imageNumber][1];
     document.getElementById("description-text").innerHTML = descList[imageNumber][2];
@@ -81,7 +82,9 @@ function prev(){
 // Go to next post.
 function next(){
     if (imageIndex == (images.length - 1)) changeImage(0);
-    else changeImage(parseInt(imageIndex) + parseInt(1));
+    else {
+        changeImage(parseInt(imageIndex) + parseInt(1));
+    }
 }
 
 // TODO: Figure out how to use this to search.

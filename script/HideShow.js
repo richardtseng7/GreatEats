@@ -26,8 +26,7 @@ function userChecked(){
     if(document.getElementById('posts').checked) {
         // Posts radio button is checked. 
         toggleCard('user-grid-card', 'places-card');
-    }
-    if(document.getElementById('places').checked) {
+    } else if(document.getElementById('places').checked) {
         // Places radio button is checked.
         toggleCard('places-card', 'user-grid-card');
     }
@@ -37,8 +36,7 @@ function loginChecked(){
     if(document.getElementById('sign-in').checked) {
         // Sign in radio button is checked.
         toggleCard('sign-in-card', 'register-card');
-    } 
-    if(document.getElementById('register').checked) {
+    } else if(document.getElementById('register').checked) {
         // Register radio button is checked.
         toggleCard('register-card', 'sign-in-card');
     }

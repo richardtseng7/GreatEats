@@ -37,9 +37,10 @@ function updateProfile(){
         uid = user.uid;
         
         // Temporarily set name on profile to email address before @
-        var username = email.split("@")[0];
-        document.getElementById("name").innerHTML = username;
-        document.getElementById("bio").innerHTML = email;
+
+//        var username = email.split("@")[0];
+//        document.getElementById("name").innerHTML = username;
+//        document.getElementById("bio").innerHTML = email;
     }
     else{
         // No user signed in.

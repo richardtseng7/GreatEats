@@ -17,13 +17,34 @@ var displayLocation = document.getElementById("displayLocation");
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-        //User is signed in
+        //User is signed in.
+        updateProfile();
         toggleCard('user-header', 'guest-header');
     } else {
-        //No one is signed in
+        //No user signed in.
         toggleCard('guest-header', 'user-header');
     }
 });
+
+function updateProfile(){
+    var user = firebase.auth().currentUser;
+    var name, email, photoURL, uid;
+    if (user){
+        // User is signed in.
+        name = user.displayName;
+        email = user.email;
+        photoURL = user.photoURL;
+        uid = user.uid;
+        
+        // Temporarily set name on profile to email address before @
+        var username = email.split("@")[0];
+        document.getElementById("name").innerHTML = username;
+        document.getElementById("bio").innerHTML = email;
+    }
+    else{
+        // No user signed in.
+    }
+}
 
 function addToDatabase() {
     var l = document.getElementById("locationField").value.split(',');

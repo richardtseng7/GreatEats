@@ -27,7 +27,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 function addToDatabase() {
     var l = document.getElementById("locationField").value.split(',');
-    var location = l[0] + ", " + l[1];
+    var location = l[0] + "," + l[1];
     var restaurant = document.getElementById("restaurantField").value.split(',')[0];
     var description = document.getElementById("descriptionField").value;
     var photo = getFile();
@@ -39,8 +39,9 @@ function addToDatabase() {
     var timestamp = createTimestamp();
     ref.child("/City/" + location + "/" + timestamp).set(photo);
     var formatted = location.split(', ').join('').toLowerCase();
-    ref.child("/City/" + location + "/" + "lowercase").set(formatted);
+//    ref.child("/City/" + location + "/" + "lowercase").set(formatted);
     var newPost = ref.child("/Post/").push().key;
+//    ref.child("/City/" + location + "/" + "post").set(newPost);
     ref.child("/Photo/" + photo).set(newPost);
     ref.child("/Post/" + newPost + "/description/").set(description);
     ref.child("/Post/" + newPost + "/photo/").set(photo);
@@ -69,29 +70,24 @@ function createTimestamp() {
 }
 
 function retrieveFromDatabase(key) {
-    var cityRef = ref.child("City/" + key);
-    var columnDiv = ["column1", "column2", "column3"];
-    var i = 0;
-    cityRef.orderByKey().once('value', function(snapshot) {
+    var cityRef = ref.child("/City/" + key);
+    cityRef.orderByKey().once('value', function(snapshot) {  
         snapshot.forEach(function(childSnapshot) {
             if (childSnapshot.key != "lowercase"){
                 var description = childSnapshot.val();
-                var photo = childSnapshot.val().split('%').join('.');
+                var photo = childSnapshot.val().split('%').join('.');      
                 storageRef.child(photo).getDownloadURL().then(function(url){
                     var img = document.createElement('img');
                     img.src = url;
+                    img.setAttribute("class", "preview");
                     img.setAttribute("id", "content");
+                    var images = document.getElementsByClassName("preview");
+                    img.setAttribute("index", images.length);
                     img.onclick = function(event){
-                        openNav(description);
-                        var PopUpImage = document.getElementById("PopUpImage");
-                        PopUpImage.src = img.src;
+                        changeImage(img.getAttribute("index"));
                     };
-                    var grid = document.getElementById(columnDiv[i]);
+                    var grid = document.getElementById("grid");
                     grid.appendChild(img);
-                    if (i == 2) i = 0;
-                    else{
-                        i++;
-                    }
                 });
             }
         });

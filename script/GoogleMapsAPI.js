@@ -59,6 +59,7 @@ function codeLatLng(lat, lng) {
                     }
                 }   
                 var l = document.getElementById("user-location");
+                localStorage.setItem("userLocation", city + ", " + state);
                 l.innerHTML += "&nbsp; Near " + city + ", " + state;
             } else {
                 alert("No results found");

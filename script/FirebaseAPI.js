@@ -16,13 +16,13 @@ var storageRef = firebase.storage().ref();
 var displayLocation = document.getElementById("displayLocation");
 
 firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    //User is signed in
-    toggleCard('user-header', 'guest-header');
-  } else {
-    //No one is signed in
-    toggleCard('guest-header', 'user-header');
-  }
+    if (user) {
+        //User is signed in
+        toggleCard('user-header', 'guest-header');
+    } else {
+        //No one is signed in
+        toggleCard('guest-header', 'user-header');
+    }
 });
 
 function addToDatabase() {
@@ -120,57 +120,71 @@ function showPassword() {
     }
 }
 
-function signInWithGoogle(){
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithRedirect(provider);
-    firebase.auth().getRedirectResult().then(function(result) {
-        if (result.credential) {
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            var token = result.credential.accessToken;
-        }
-        // The signed-in user info.
-        var user = result.user;
+function signInWithGoogle() {
+    if (!firebase.auth().currentUser){
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithRedirect(provider);
+        firebase.auth().getRedirectResult().then(function(result) {
+            if (result.credential) {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                var token = result.credential.accessToken;
+            }
+            // The signed-in user info.
+            var user = result.user;
+        }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(errorMessage);
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+        });
+    }
+    else {
         window.location.href = "index.html";
-    }).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        alert(errorMessage);
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
-    });
-
+    }
 }
 
 function register(){
-    var email = document.getElementById("register-email").value;
-    var password = document.getElementById("register-password").value;
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
-        //Registration successful. Show
+    //Current user is null. No user signed in.
+    if (!firebase.auth().currentUser){
+        var email = document.getElementById("register-email").value;
+        var password = document.getElementById("register-password").value;
+        firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
+            //Registration successful.
+            window.location.href = "index.html";
+        }).catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(errorMessage);
+            window.location.reload();
+        });
+    }
+    else {
         window.location.href = "index.html";
-    }).catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        alert(errorMessage);
-        window.location.reload();
-    });
+    }
 }
 
 function signIn() {
-    var email = document.getElementById("login-email").value;
-    var password = document.getElementById("login-password").value;
-    firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
-        // Sign-in successful. Show user explore page
+    if (!firebase.auth().currentUser){
+        var email = document.getElementById("login-email").value;
+        var password = document.getElementById("login-password").value;
+        firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
+            // Sign-in successful.
+            window.location.href = "index.html";
+        }).catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(errorMessage);
+            window.location.reload();
+        });
+    }
+    else {
         window.location.href = "index.html";
-    }).catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        alert(errorMessage);
-        window.location.reload();
-    });
+    }
 }
 
 function signOut(){

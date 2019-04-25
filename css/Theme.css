@@ -65,7 +65,7 @@ button {
 
 /* Button styling. */
 
-#postButton, #savebtn,  #sign-in-btn, #register-btn {
+#postButton, #savebtn, #sign-in-btn, #register-btn {
     background-color: var(--yellow);
     color: white;
     border-radius: 4px;

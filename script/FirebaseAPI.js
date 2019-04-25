@@ -57,7 +57,7 @@ function addToDatabase() {
         uploadImageToDatabase(photo);
         photo = photo.name.split('.').join('%');
     }
-    var user = "Wendy";
+    var user = "Linh Bui";
     var timestamp = createTimestamp();
     ref.child("/City/" + location + "/" + timestamp).set(photo);
     var formatted = location.split(', ').join('').toLowerCase();
@@ -123,10 +123,10 @@ function getDesc(photoKey){
         shortcut.child("/restaurant").once('value', function(snapshot) {
             var restaurant = snapshot.val();
             shortcut.child("/userID").once('value', function(snapshot) {
-                var location = snapshot.val();
+                var username = snapshot.val();
                 shortcut.child("/description").once('value', function(snapshot) {
                     var review = snapshot.val();
-                    var arr = [restaurant, location, review];
+                    var arr = [restaurant, username, review];
                     cacheDescription(arr);
                 });
             });

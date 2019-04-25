@@ -9,7 +9,7 @@ window.onload = function() {
         var image = images[i];
         image.setAttribute("index", i);
 
-        var arr = ["Restaurant name", "Location", "A great review awaits!"];
+        var arr = ["Restaurant name", "Username", "A great review awaits!"];
         cacheDescription(arr);
         image.onclick = function(){
             changeImage(this.getAttribute("index"));

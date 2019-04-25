@@ -159,8 +159,8 @@ function showPassword() {
 function signInWithGoogle() {
     if (!firebase.auth().currentUser){
         var provider = new firebase.auth.GoogleAuthProvider();
-        provider.addScope(‘profile’);
-        provider.addScope(‘email’);
+//        provider.addScope(‘profile’);
+//        provider.addScope(‘email’);
         firebase.auth().signInWithRedirect(provider);
         firebase.auth().getRedirectResult().then(function(result) {
             if (result.credential) {

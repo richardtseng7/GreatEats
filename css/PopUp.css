@@ -46,6 +46,10 @@
     line-height: 28px;
 }
 
+#restaurant-location {
+    margin-left: 2px;
+}
+
 #savebtn{
     display: flex;
     justify-content: flex-end;

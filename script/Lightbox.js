@@ -1,6 +1,7 @@
 /*eslint-env browser*/
 var images = document.getElementsByClassName("preview");
 var imageIndex = 0;
+var descList = [];
 
 // Add onclick to each image opening the overlay with the clicked image.
 window.onload = function() {
@@ -8,10 +9,17 @@ window.onload = function() {
         var image = images[i];
         image.setAttribute("index", i);
         image.onclick = function(){
-            changeImage(this.getAttribute("index"));
+            var arr = ["Restaurant name", "Location", "A great review awaits!"];
+            cacheDescription(arr);
+            
+            changeImage(this.getAttribute("index"), arr);
         };
     }
 };
+
+function cacheDescription(desc){
+    descList.push(desc);
+}
 
 // Add the event listener that allows for keyboard navigation.
 function enableKeyboardShortcuts(){
@@ -37,13 +45,13 @@ function addKeyboardNav(event) {
 }
 
 // Display overlay including clicked image and its respective description.
-// TODO: Retrieve description from database based on image src.
-function changeImage(imageNumber){
-
+function changeImage(imageNumber, desc){
     document.getElementById("myNav").style.display = "flex";
     var PopUpImage = document.getElementById("pop-up-img");
     PopUpImage.src = images[imageNumber].src;
-    document.getElementById("description-text").innerHTML = "Insert a great review here.";
+    document.getElementById("restaurant-name").innerHTML = desc[0];
+    document.getElementById("restaurant-location").innerHTML = desc[1];
+    document.getElementById("description-text").innerHTML = desc[2];
     // Allow user to navigate using keyboard.
     enableKeyboardShortcuts();
     // Prevent scrolling while in overlay.

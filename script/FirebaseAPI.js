@@ -39,9 +39,9 @@ function addToDatabase() {
     var timestamp = createTimestamp();
     ref.child("/City/" + location + "/" + timestamp).set(photo);
     var formatted = location.split(', ').join('').toLowerCase();
-//    ref.child("/City/" + location + "/" + "lowercase").set(formatted);
+    //    ref.child("/City/" + location + "/" + "lowercase").set(formatted);
     var newPost = ref.child("/Post/").push().key;
-//    ref.child("/City/" + location + "/" + "post").set(newPost);
+    //    ref.child("/City/" + location + "/" + "post").set(newPost);
     ref.child("/Photo/" + photo).set(newPost);
     ref.child("/Post/" + newPost + "/description/").set(description);
     ref.child("/Post/" + newPost + "/photo/").set(photo);
@@ -73,23 +73,35 @@ function retrieveFromDatabase(key) {
     var cityRef = ref.child("/City/" + key);
     cityRef.orderByKey().once('value', function(snapshot) {  
         snapshot.forEach(function(childSnapshot) {
-            if (childSnapshot.key != "lowercase"){
-                var description = childSnapshot.val();
-                var photo = childSnapshot.val().split('%').join('.');      
-                storageRef.child(photo).getDownloadURL().then(function(url){
-                    var img = document.createElement('img');
-                    img.src = url;
-                    img.setAttribute("class", "preview");
-                    img.setAttribute("id", "content");
-                    var images = document.getElementsByClassName("preview");
-                    img.setAttribute("index", images.length);
-                    img.onclick = function(event){
-                        changeImage(img.getAttribute("index"));
-                    };
-                    var grid = document.getElementById("grid");
-                    grid.appendChild(img);
-                });
-            }
+            var photoKey = childSnapshot.val();
+            var photo = photoKey.split('%').join('.'); 
+            storageRef.child(photo).getDownloadURL().then(function(url){
+                var img = document.createElement('img');
+                img.src = url;
+                img.setAttribute("class", "preview");
+                img.setAttribute("id", "content");
+                var images = document.getElementsByClassName("preview");
+                img.setAttribute("index", images.length);
+                img.onclick = function(event){
+                    ref.child("/Photo/" + photoKey).once('value').then( function(snapshot) {
+                        var post = snapshot.val();
+                        var shortcut =  ref.child("/Post/" + post);
+                        shortcut.child("/restaurant").once('value', function(snapshot) {
+                            var restaurant = snapshot.val();
+                            shortcut.child("/userID").once('value', function(snapshot) {
+                                var location = snapshot.val();
+                                shortcut.child("/description").once('value', function(snapshot) {
+                                    var review = snapshot.val();
+                                    var arr = [restaurant, location, review];
+                                    changeImage(img.getAttribute("index"), arr);
+                                });
+                            });
+                        });
+                    });
+                };
+                var grid = document.getElementById("grid");
+                grid.appendChild(img);
+            });
         });
     });
 }

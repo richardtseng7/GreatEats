@@ -35,12 +35,12 @@ function updateProfile(){
         email = user.email;
         photoURL = user.photoURL;
         uid = user.uid;
-        
+
         // Temporarily set name on profile to email address before @
 
-//        var username = email.split("@")[0];
-//        document.getElementById("name").innerHTML = username;
-//        document.getElementById("bio").innerHTML = email;
+        //        var username = email.split("@")[0];
+        //        document.getElementById("name").innerHTML = username;
+        //        document.getElementById("bio").innerHTML = email;
     }
     else{
         // No user signed in.
@@ -159,6 +159,8 @@ function showPassword() {
 function signInWithGoogle() {
     if (!firebase.auth().currentUser){
         var provider = new firebase.auth.GoogleAuthProvider();
+        provider.addScope(‘profile’);
+        provider.addScope(‘email’);
         firebase.auth().signInWithRedirect(provider);
         firebase.auth().getRedirectResult().then(function(result) {
             if (result.credential) {

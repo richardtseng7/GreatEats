@@ -8,7 +8,7 @@ window.onload = function() {
     for(var i = 0; i < images.length; i++){
         var image = images[i];
         image.setAttribute("index", i);
-        
+
         var arr = ["Restaurant name", "Location", "A great review awaits!"];
         cacheDescription(arr);
         image.onclick = function(){
@@ -18,7 +18,7 @@ window.onload = function() {
 };
 
 function cacheDescription(desc){
-//    console.log("Add " + desc + " to cache.");
+    //    console.log("Add " + desc + " to cache.");
     descList.push(desc);
 }
 
@@ -50,7 +50,7 @@ function changeImage(imageNumber){
     document.getElementById("myNav").style.display = "flex";
     var PopUpImage = document.getElementById("pop-up-img");
     PopUpImage.src = images[imageNumber].src;
-    
+
     document.getElementById("restaurant-name").innerHTML = descList[imageNumber][0];
     document.getElementById("restaurant-location").innerHTML = descList[imageNumber][1];
     document.getElementById("description-text").innerHTML = descList[imageNumber][2];

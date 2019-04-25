@@ -38,6 +38,7 @@ function handleDrop(e) {
 function handleFiles(files) {
     var f = Array.from(files);
     uploadFile(f[0]);
+    uploadImageToDatabase(f[0]);
     previewFile(f[0]);
     file = f[0];
 }

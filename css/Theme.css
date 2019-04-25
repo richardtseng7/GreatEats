@@ -60,12 +60,12 @@ button {
 }
 
 ::placeholder{
-    font-size: 9pt;
+    font-size: 10pt;
 }
 
 /* Button styling. */
 
-#postButton, #savebtn, #sign-in-btn, #register-btn {
+#postButton, #savebtn,  #sign-in-btn, #register-btn {
     background-color: var(--yellow);
     color: white;
     border-radius: 4px;
@@ -90,6 +90,16 @@ button {
 
 #search-bar:focus {
     background-color: #fff;
+}
+
+#login-btn {
+    color: white;
+    border: 1px solid #ddd;
+    padding: 7px 14px;
+}
+
+#login-btn:hover {
+    background-color: var(--light-navy);
 }
 
 /* User drop down menu on right side of header. Refer to Explore.css. */

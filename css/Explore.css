@@ -90,6 +90,10 @@ input[type="search"]:focus::placeholder {
     align-items: center;
 }
 
+.user-header {
+    display: none;
+}
+
 #explorebtn, #bookmarkbtn, #profilebtn, #settingsbtn {
     border: none;
     margin-left: 10px;
@@ -99,6 +103,7 @@ input[type="search"]:focus::placeholder {
     display: none;
     position: absolute;
     top: 50px;
+    right: 20px;
     min-width: 115px;
     box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.25);
 }

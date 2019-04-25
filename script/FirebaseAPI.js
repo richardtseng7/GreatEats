@@ -12,9 +12,18 @@ firebase.initializeApp(config);
 var ref = firebase.database().ref();
 var locationRef = ref.child("City/");
 var storageRef = firebase.storage().ref();
-var auth = firebase.auth();
 
 var displayLocation = document.getElementById("displayLocation");
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    //User is signed in
+    toggleCard('user-header', 'guest-header');
+  } else {
+    //No one is signed in
+    toggleCard('guest-header', 'user-header');
+  }
+});
 
 function addToDatabase() {
     var l = document.getElementById("locationField").value.split(',');
@@ -113,8 +122,8 @@ function showPassword() {
 
 function signInWithGoogle(){
     var provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithRedirect(provider);
-    auth.getRedirectResult().then(function(result) {
+    firebase.auth().signInWithRedirect(provider);
+    firebase.auth().getRedirectResult().then(function(result) {
         if (result.credential) {
             // This gives you a Google Access Token. You can use it to access the Google API.
             var token = result.credential.accessToken;
@@ -139,7 +148,7 @@ function signInWithGoogle(){
 function register(){
     var email = document.getElementById("register-email").value;
     var password = document.getElementById("register-password").value;
-    auth.createUserWithEmailAndPassword(email, password).then(function(){
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
         //Registration successful. Show
         window.location.href = "index.html";
     }).catch(function(error) {
@@ -153,7 +162,7 @@ function register(){
 function signIn() {
     var email = document.getElementById("login-email").value;
     var password = document.getElementById("login-password").value;
-    auth.signInWithEmailAndPassword(email, password).then(function() {
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
         // Sign-in successful. Show user explore page
         window.location.href = "index.html";
     }).catch(function(error) {

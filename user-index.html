@@ -29,39 +29,31 @@
                     <input id="search-bar" type="search" placeholder="&#xF002; Search">
                 </div>
                 <div class="user">
-                    
-                    <div class="guest-header">
-                        <button id="login-btn" type="submit" onclick="javascript: window.location.href='login.html';">Sign in</button>
-                    </div>    
-                    
-                    <div class="user-header"> 
-                        <!-- Explore button -->
-                        <button id="explorebtn" type="submit" onclick="javascript: window.location.href='index.html';">
-                            <i class="feather-24" data-feather="compass"></i>
-                        </button>
+                    <!-- Explore button -->
+                    <button id="explorebtn" type="submit" onclick="javascript: window.location.href='index.html';">
+                        <i class="feather-24" data-feather="compass"></i>
+                    </button>
 
-                        <!-- Bookmarks button -->
-                        <button id="bookmarkbtn" type="submit">
-                            <i class="feather-24" data-feather="bookmark"></i>
-                        </button>
+                    <!-- Bookmarks button -->
+                    <button id="bookmarkbtn" type="submit">
+                        <i class="feather-24" data-feather="bookmark"></i>
+                    </button>
 
-                        <!-- User profile button -->
-                        <button id="profilebtn" type="submit" onclick="javascript: window.location.href='profile.html';">
-                            <i class="feather-24" data-feather="user"></i>
-                        </button>
+                    <!-- User profile button -->
+                    <button id="profilebtn" type="submit" onclick="javascript: window.location.href='profile.html';">
+                        <i class="feather-24" data-feather="user"></i>
+                    </button>
 
-                        <!-- Settings button -->
-                        <button id="settingsbtn" type="submit" onclick="show('settings-menu')">
-                            <i class="feather-24" data-feather="settings"></i>
-                        </button>
-                        <!-- Settings drop down menu -->
-                        <div class="settings-menu">
-                            <a href="javascript: show('post-card');">Post</a>
-                            <a href="#">Dark mode</a>
-                            <a href="javascript: signOut();">Sign out</a>
-                        </div>
+                    <!-- Settings button -->
+                    <button id="settingsbtn" type="submit" onclick="show('settings-menu')">
+                        <i class="feather-24" data-feather="settings"></i>
+                    </button>
+                    <!-- Settings drop down menu -->
+                    <div class="settings-menu">
+                        <a href="javascript: show('post-card');">Post</a>
+                        <a href="#">Dark mode</a>
+                        <a href="javascript: signOut();">Sign out</a>
                     </div>
-                    
                 </div>    
             </div>
             <!-- Share post card -->

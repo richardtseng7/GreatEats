@@ -29,7 +29,7 @@
     margin-bottom: 50px;
 }
 
-.sign-in-card, .sign-in-form, .register-card, .register-form{
+.sign-in-card, .sign-in-form, #sign-in-btn, .sign-in-google,  .register-card, .register-form, #register-btn, .register-google {
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -42,6 +42,16 @@
 #login-email, #login-password, #register-email, #register-password {
     padding: 7px;
     width: 200px;
+}
+
+#sign-in-btn {
+    padding: 10px 90px;
+    margin-bottom: 15px;
+}
+
+#register-btn {
+    padding: 10px 80px;
+    margin-bottom: 15px;
 }
 
 #show-password, #register-password{
